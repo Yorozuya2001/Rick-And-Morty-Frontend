@@ -26,7 +26,7 @@ const Card = ({ id, name, species, gender, image, onClose, isInFav }) => {
         },
       };
 
-      await fetch(`${BACKEND_URL}{/rickandmorty/fav`, config);
+      await fetch(`${BACKEND_URL}/rickandmorty/fav`, config);
       console.log("date send");
       dispatch(getFavorites());
     } catch (error) {
