@@ -10,6 +10,7 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import { getFavorites } from "../../../redux/actions";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import { BACKEND_URL } from "../../../App";
 
 const Card = ({ id, name, species, gender, image, onClose, isInFav }) => {
   const [isFav, setIsFav] = useState(false);
@@ -25,7 +26,7 @@ const Card = ({ id, name, species, gender, image, onClose, isInFav }) => {
         },
       };
 
-      await fetch("http://localhost:3001/rickandmorty/fav", config);
+      await fetch(`${BACKEND_URL}{/rickandmorty/fav`, config);
       console.log("date send");
       dispatch(getFavorites());
     } catch (error) {
