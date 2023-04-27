@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BACKEND_URL } from "../App";
 
 const useCharacters = () => {
   const [characters, setCharacters] = useState([]);
@@ -18,9 +19,7 @@ const useCharacters = () => {
   };
 
   const onSearch = (id) => {
-    const URL_BASE = "http://localhost:3001";
-
-    fetch(`${URL_BASE}/onsearch/${id}`)
+    fetch(`${BACKEND_URL}/onsearch/${id}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.id && !idExist(data.id)) {

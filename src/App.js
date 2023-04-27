@@ -18,6 +18,10 @@ import useCharacters from "./helpers/useCharacters.js";
 //Styles
 import "./App.css";
 
+export const BACKEND_URL =
+  "https://rick-and-morty-backend-production.up.railway.app";
+export const LOCAL_URL = "";
+
 function App() {
   let { pathname } = useLocation();
   const navigate = useNavigate();

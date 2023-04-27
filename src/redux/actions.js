@@ -1,3 +1,5 @@
+import { BACKEND_URL } from "../App";
+
 export const ADD_TO_FAVORITES = "ADD_TO_FAVORITES";
 export const REMOVE_TO_FAVORITES = "REMOVE_TO_FAVORITES";
 export const GET_FAVORITES = "GET_FAVORITES";
@@ -18,7 +20,7 @@ export const removeToFavorites = (id) => {
 export const getFavorites = () => {
   return async (dispatch) => {
     try {
-      const response = await fetch("http://localhost:3001/rickandmorty/fav");
+      const response = await fetch(`${BACKEND_URL}/rickandmorty/fav`);
       const data = await response.json();
 
       dispatch({
